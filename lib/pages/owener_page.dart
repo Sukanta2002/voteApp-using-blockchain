@@ -126,6 +126,9 @@ class _OwenerPageState extends State<OwenerPage> {
                     onPressed: () {
                       authorizeVoter(
                           authorizeVoterController.text, widget.ethClient);
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                          content: Text('Candidate added successfully')));
+                      authorizeVoterController.clear();
                     },
                     child: Text(
                       'Add Voter',
